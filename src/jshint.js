@@ -3126,8 +3126,9 @@ var JSHINT = (function() {
 
       verifyMaxComplexityPerFunction: function() {
         var max = state.option.maxcomplexity;
+        var alwaysDisplayComplexity = state.option.alwaysDisplayComplexity;
         var cc = this.ComplexityCount;
-        if (max && cc > max) {
+        if (max && cc > max || alwaysDisplayComplexity) {
           warning("W074", functionStartToken, cc);
         }
       }

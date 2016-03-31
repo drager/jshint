@@ -867,6 +867,12 @@ exports.val = {
   maxcomplexity: false,
 
   /**
+   * This option lets you always display the cyclomatic complexity number, even if the complexity
+   * is just 1.
+   */
+  alwaysDisplayComplexity: false,
+
+  /**
    * This option suppresses warnings about variable shadowing i.e. declaring a
    * variable that had been already declared somewhere in the outer scope.
    *
