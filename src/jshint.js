@@ -95,6 +95,7 @@ var JSHINT = (function() {
     urls,
 
     extraModules = [],
+    complexitySum = 0,
     emitter = new events.EventEmitter();
 
   function checkOption(name, t) {
@@ -3128,6 +3129,7 @@ var JSHINT = (function() {
         var max = state.option.maxcomplexity;
         var alwaysDisplayComplexity = state.option.alwaysDisplayComplexity;
         var cc = this.ComplexityCount;
+        complexitySum += cc;
         if (max && cc > max || alwaysDisplayComplexity) {
           warning("W074", functionStartToken, cc);
         }
@@ -5332,6 +5334,8 @@ var JSHINT = (function() {
         itself(k.value, o, g);
       }
     }
+
+    warning("I004", state.tokens.next, complexitySum);
 
     return JSHINT.errors.length === 0;
   };

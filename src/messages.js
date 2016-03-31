@@ -225,7 +225,8 @@ var warnings = {
 var info = {
   I001: "Comma warnings can be turned off with 'laxcomma'.",
   I002: null,
-  I003: "ES5 option is now set per default"
+  I003: "ES5 option is now set per default",
+  I004: "The cyclomatic complexity sum of this file is: {a}."
 };
 
 exports.errors = {};
